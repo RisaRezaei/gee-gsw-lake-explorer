@@ -1,6 +1,6 @@
 name: fetch-media
 # One-off: downloads the README/website images rendered by Earth Engine
-# (labelled timelapse + small multiples of Lake Urmia) and commits them to docs/.
+# (labelled timelapse + one panel per year of Lake Urmia) and commits them to docs/.
 on:
   push:
     paths: ['.github/workflows/fetch-media.yml']
@@ -14,17 +14,23 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download Earth Engine renders
         run: |
-          mkdir -p docs
-          curl -fsSL -o docs/timelapse.gif "https://earthengine.googleapis.com/v1/projects/risarezaei/videoThumbnails/c0a91635dec36b3a5c13ccd99b135e43-8023d757c7f13c63251795c113d485b7:getPixels"
-          curl -fsSL -o docs/preview.png "https://earthengine.googleapis.com/v1/projects/risarezaei/thumbnails/27140699f16cf027809603b80c729804-4cd67516d4fbcfd9eb2b24800afc381f:getPixels"
-          curl -fsSL -o card.png "https://earthengine.googleapis.com/v1/projects/risarezaei/thumbnails/9dc39f94123c4afc4fb52425d2f11482-5ea374877e0cb5767ee89f68cb624ea6:getPixels"
-      - name: Card image (720x450 jpg) and MP4 version of the timelapse
+          mkdir -p docs tmp
+          EE=https://earthengine.googleapis.com/v1/projects/risarezaei
+          curl -fsSL -o docs/timelapse.gif "$EE/videoThumbnails/c0a91635dec36b3a5c13ccd99b135e43-74a41077950fff243585c33e90024f02:getPixels"
+          curl -fsSL -o tmp/1998.png "$EE/thumbnails/973cb6e1f3f71b2d3d3e276c0a937793-5f887a934761334157cfb19d3229c375:getPixels"
+          curl -fsSL -o tmp/2008.png "$EE/thumbnails/d80ddf9957681ba6a8b42bc0f86bf9d6-b8f944199f579d26cef9c5180ea548cf:getPixels"
+          curl -fsSL -o tmp/2015.png "$EE/thumbnails/fb486dce9fb3acefa64d5a4c230a03d7-5616868cab6ddd6db77d3ce17355aae3:getPixels"
+          curl -fsSL -o tmp/2021.png "$EE/thumbnails/c058f8af69138b8787e141cd76034d6d-72b304fcdf0585f5b33216bbe23aa3cd:getPixels"
+      - name: Small multiples, card image and MP4 version of the timelapse
         run: |
           sudo apt-get -qq update && sudo apt-get -qq install -y imagemagick ffmpeg > /dev/null
-          convert card.png -resize 720x450 -background white -gravity center -extent 720x450 -quality 88 docs/card.jpg
+          for y in 1998 2008 2015 2021; do convert tmp/$y.png -bordercolor white -border 12 tmp/b$y.png; done
+          convert tmp/b1998.png tmp/b2008.png tmp/b2015.png tmp/b2021.png +append -background white -flatten docs/preview.png
+          convert tmp/b1998.png tmp/b2015.png tmp/b2021.png +append -background white -flatten \
+            -resize 720x450 -gravity center -extent 720x450 -quality 88 docs/card.jpg
           ffmpeg -loglevel error -y -i docs/timelapse.gif -movflags faststart -pix_fmt yuv420p \
             -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" docs/timelapse.mp4
-          rm card.png
+          rm -rf tmp
           ls -la docs
       - name: Commit
         run: |

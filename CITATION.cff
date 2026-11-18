@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you refer to this work, please cite it as below. Reuse of the code needs the author's written permission (see LICENSE)."
+type: software
+title: "GSW Lake Explorer: yearly surface water of any lake on Earth, 1984–2021"
+date-released: 2026-10-27
+authors:
+  - family-names: Abbasalizadehrezaei
+    given-names: Parisa
+    website: "https://risarezaei.github.io"
+repository-code: "https://github.com/RisaRezaei/gee-gsw-lake-explorer"
+url: "https://risarezaei.projects.earthengine.app/view/gsw-lake-explorer"
+license-url: "https://github.com/RisaRezaei/gee-gsw-lake-explorer/blob/main/LICENSE"
+abstract: >-
+  Google Earth Engine app: click any lake on Earth, or search it by name, to
+  see an animation of its yearly JRC Global Surface Water classes, a chart of
+  permanent, seasonal and total water area per year, and a comparison of the
+  first and last decades. Lake boundaries come from HydroLAKES; years with
+  Landsat data gaps are excluded.
+keywords:
+  - Google Earth Engine
+  - JRC Global Surface Water
+  - HydroLAKES
+  - lakes
+  - surface water change
+  - Landsat

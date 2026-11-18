@@ -20,11 +20,9 @@
 
 Example (Lake Urmia): mean permanent water fell from **4,881 km² (1984–1993)** to **2,122 km² (2012–2021), −56.5 %**. Total water (permanent + seasonal) fell from 5,216 to 3,971 km² (−23.9 %): much of the former lake bed now floods only seasonally.
 
-## Run it yourself
+## Use it
 
-1. Open the [Earth Engine Code Editor](https://code.earthengine.google.com/) (free for non-commercial use).
-2. Paste [`gsw_lake_explorer.js`](gsw_lake_explorer.js) into a new script and press **Run**.
-3. Optional: **Apps → New App** publishes your own copy. Use a Cloud project without a billing account and it can't cost you anything.
+The [live app](https://risarezaei.projects.earthengine.app/view/gsw-lake-explorer) is free to use, and links to any lake can be shared. The script is published here so it can be read and cited. Running, copying or republishing it, for example by pasting it into the Earth Engine Code Editor or publishing your own app from it, needs the author's written permission (see [Copyright](#copyright)).
 
 ## How it works
 
@@ -46,11 +44,17 @@ Example (Lake Urmia): mean permanent water fell from **4,881 km² (1984–1993)*
 ## Limits
 
 - GSW is Landsat-based, so water under vegetation and very small lakes (< 1–2 pixels) are missed.
-- Large lakes are analysed at a coarser scale (the scale is shown in the app).
+- Large lakes are analyzed at a coarser scale (the scale is shown in the app).
 - Years with heavy data gaps (common before 2000) are excluded from the chart, the summary and the animation.
 
-## Author
+## Citation
 
-Parisa Abbasalizadehrezaei · [risarezaei.github.io](https://risarezaei.github.io)
+Use the **Cite this repository** button on GitHub, or:
 
-MIT licence.
+> Abbasalizadehrezaei, P. (2026). *GSW Lake Explorer: yearly surface water of any lake on Earth, 1984–2021* [Software]. https://github.com/RisaRezaei/gee-gsw-lake-explorer
+
+## Copyright
+
+© 2026 Parisa Abbasalizadehrezaei · [risarezaei.github.io](https://risarezaei.github.io). All rights reserved.
+
+The code is public so that it can be read and cited. It is **not** open source: copying, modifying, republishing or reusing any part of it needs the author's written permission. See [`LICENSE`](LICENSE). To ask, get in touch through [risarezaei.github.io](https://risarezaei.github.io).

@@ -1,21 +1,33 @@
-MIT License
+GSW Lake Explorer
+Copyright © 2026 Parisa Abbasalizadehrezaei. All rights reserved.
 
-Copyright (c) 2026 Parisa Abbasalizadehrezaei
+This repository is the original work of Parisa Abbasalizadehrezaei and is
+protected by copyright. This covers the Earth Engine script, the app design,
+the documentation, and the images and animations in docs/.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+No license is granted. Without the author's prior written permission, nobody
+may copy, modify, translate, merge, publish, host, distribute, sublicense,
+sell or otherwise use any part of this repository, in whole or in part. This
+includes pasting the script into the Earth Engine Code Editor, publishing an
+Earth Engine App or any other app from it, reusing parts of it in other
+scripts, websites, services, products, papers, theses and reports, and using
+it for training or building other models.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Allowed without asking:
+  - using the live app at
+    https://risarezaei.projects.earthengine.app/view/gsw-lake-explorer
+    and sharing links to it;
+  - viewing the repository on GitHub, and forking it within GitHub, as far as
+    GitHub's Terms of Service require for public repositories (a fork does
+    not give permission to use the code anywhere else);
+  - citing the work, as described in CITATION.cff.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+To ask for permission, contact the author through https://risarezaei.github.io
+
+Third-party material keeps its own terms: JRC Global Surface Water v1.4
+(© European Commission Joint Research Centre / Google; Pekel et al., 2016),
+HydroLAKES v1.0 (CC BY 4.0; Messager et al., 2016), the users/gena/packages
+Earth Engine module, and Google Earth Engine itself (Google's terms of service).
+
+Disclaimer: provided "as is", without warranty of any kind. The author accepts
+no liability for any decision made, or damage arising, from its use.

@@ -10,6 +10,10 @@
  * Lake boundaries: HydroLAKES v1.0 (lakes >= 10 ha), public copy in the
  * sat-io community catalog.
  * No getInfo() anywhere — everything client-side uses evaluate().
+ *
+ * Copyright © 2026 Parisa Abbasalizadehrezaei. All rights reserved.
+ * Copying, modifying or republishing this script needs the author's written
+ * permission: https://github.com/RisaRezaei/gee-gsw-lake-explorer/blob/main/LICENSE
  ******************************************************************************/
 
 // ---------------------------------------------------------------- data
@@ -94,6 +98,9 @@ panel.add(legendRow('bdbdbd', 'No data (cloud / no Landsat scene)'));
 panel.add(legendRow('ff0000', 'HydroLAKES outline'));
 panel.add(ui.Label('Data: JRC Global Surface Water v1.4 (Pekel et al., 2016); HydroLAKES v1.0 (Messager et al., 2016).',
                    {fontSize: '11px', color: '777777'}));
+panel.add(ui.Label('© 2026 Parisa Abbasalizadehrezaei. All rights reserved.',
+                   {fontSize: '11px', color: '777777', margin: '0 8px 8px 8px'},
+                   'https://github.com/RisaRezaei/gee-gsw-lake-explorer'));
 
 // ---------------------------------------------------------------- core
 var requestId = 0;   // ignore stale callbacks when the user clicks quickly
